@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ["@typescript-eslint", "react", "react-hooks"],
   rules: {
     "react/react-in-jsx-scope": "off", // React (>v17) no longer needs to be explicitly imported
     "@typescript-eslint/no-shadow": "off", // Too restrictive
