@@ -16,7 +16,7 @@ module.exports = {
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["./tsconfig.json"],
+    project: "./tsconfig.json",
     ecmaFeatures: {
       jsx: true,
     },
@@ -24,5 +24,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["@typescript-eslint", "react"],
-  rules: {},
+  rules: {
+    "react/react-in-jsx-scope": "off", // React (>v17) no longer needs to be explicitly imported
+    "@typescript-eslint/no-shadow": "off", // Too restrictive
+  },
 };
