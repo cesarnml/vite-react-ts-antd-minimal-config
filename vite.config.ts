@@ -17,7 +17,7 @@ const src = resolve(DIRNAME, 'src')
 const customTheme = resolve(src, 'styles/antd/themes.less')
 const outDir = resolve(DIRNAME, 'dist')
 
-const themeVariables = lessToJS(fs.readFileSync(customTheme, 'utf8'))
+const customThemeVariables = lessToJS(fs.readFileSync(customTheme, 'utf8'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,7 +51,7 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
-        modifyVars: themeVariables,
+        modifyVars: customThemeVariables,
       },
       scss: { additionalData: `@import "./src/styles/global";` },
     },
