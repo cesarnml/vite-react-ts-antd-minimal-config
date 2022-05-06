@@ -10,14 +10,14 @@ import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin'
 import Inspect from 'vite-plugin-inspect'
 import { ViteAliases } from 'vite-aliases'
 
+// Various paths
 const DIRNAME = dirname(fileURLToPath(import.meta.url))
-
 const root = resolve(DIRNAME)
 const src = resolve(DIRNAME, 'src')
+const customTheme = resolve(src, 'styles/antd/themes.less')
 const outDir = resolve(DIRNAME, 'dist')
 
-const pathResolver = (path: string) => resolve(src, path)
-const themeVariables = lessToJS(fs.readFileSync(pathResolver('./styles/antd/themes.less'), 'utf8'))
+const themeVariables = lessToJS(fs.readFileSync(customTheme, 'utf8'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
