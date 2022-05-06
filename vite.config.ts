@@ -68,7 +68,7 @@ export default defineConfig({
         entryFileNames: `[name].js`,
         chunkFileNames: `[name].js`,
         assetFileNames: `[name].[ext]`,
-        dir: resolve(DIRNAME, 'dist'),
+        dir: outDir,
       },
     },
   },
