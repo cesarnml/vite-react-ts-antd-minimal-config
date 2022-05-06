@@ -6,6 +6,8 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import vitePluginImp from 'vite-plugin-imp'
+import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin'
+
 import Inspect from 'vite-plugin-inspect'
 import { ViteAliases } from 'vite-aliases'
 
@@ -28,6 +30,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    optimizeLodashImports(),
     // ViteAliases(), // FIXME: Crashes for unknown reason (alternatively we can set resolve.alias manually)
     vitePluginImp({
       libList: [

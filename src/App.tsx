@@ -1,3 +1,4 @@
+import { MinimalLodashImportTest } from '@/components/MinimalLodashImportTest'
 import { RelativeImportTest } from '@/components/RelativeImportTest'
 import { Button, Col, Row, Space, Tag } from 'antd'
 import styles from './App.module.scss'
@@ -16,6 +17,7 @@ export const App = () => {
           <Tag color="cyan">Cesar fixed Row and Col style import bug</Tag>
           <Button type="primary">Test Modifying Antd Default Theme</Button>
           <RelativeImportTest />
+          <MinimalLodashImportTest />
         </Space>
       </Col>
     </Row>
