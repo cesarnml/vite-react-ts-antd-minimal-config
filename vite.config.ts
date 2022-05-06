@@ -21,7 +21,7 @@ const themeVariables = lessToJS(fs.readFileSync(pathResolver('./styles/antd/them
 export default defineConfig({
   plugins: [
     react(),
-    // ViteAliases(), // FIXME: Crashes for unknown reason or set resolve.alias manually
+    // ViteAliases(), // FIXME: Crashes for unknown reason (alternatively we can set resolve.alias manually)
     vitePluginImp({
       libList: [
         {
