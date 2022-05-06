@@ -11,14 +11,21 @@ import { ViteAliases } from 'vite-aliases'
 
 const DIRNAME = dirname(fileURLToPath(import.meta.url))
 
-const root = resolve(DIRNAME, 'src')
+const root = resolve(DIRNAME)
+const src = resolve(DIRNAME, 'src')
 const outDir = resolve(DIRNAME, 'dist')
 
-const pathResolver = (path: string) => resolve(root, path)
+const pathResolver = (path: string) => resolve(src, path)
 const themeVariables = lessToJS(fs.readFileSync(pathResolver('./styles/antd/themes.less'), 'utf8'))
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root,
+  resolve: {
+    alias: {
+      '@': src, // TODO: Remove when ViteAliases is fixed
+    },
+  },
   plugins: [
     react(),
     // ViteAliases(), // FIXME: Crashes for unknown reason (alternatively we can set resolve.alias manually)
