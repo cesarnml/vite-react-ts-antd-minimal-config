@@ -25,12 +25,13 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks'],
   rules: {
+    // Note: 0 == off, 1 == warning, 2 == error
     'react/react-in-jsx-scope': 0, // React (>v17) no longer needs to be explicitly imported
     '@typescript-eslint/no-shadow': 0, // Too restrictive
     'import/prefer-default-export': 0, // Named exports have better IntelliSense support
-    'import/extensions': 0, // Old fashion to require file extension for imports
+    'import/extensions': 0, // Old-fashion to require file extension for imports
     'react/function-component-definition': [1, { namedComponents: 'arrow-function' }], // Named components are better
-    'import/order': 0, // TODO: Turn on when `OrganizeImports` plays nice
+    'import/order': 0, // TODO: Consider turning on when `OrganizeImports` plays nice
     '@typescript-eslint/no-unused-vars': 0, // Duplicate. Covered by `no-unused-vars`
     'react/require-default-props': 0, // Unnecessary since we use TS
     'react/prop-types': 0, // Unnecessary since we use TS
