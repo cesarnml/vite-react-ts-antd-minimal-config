@@ -44,7 +44,7 @@ export default defineConfig({
         },
       ],
     }),
-    // Inspect(), // FIXME: Crashes for unknown reason
+    Inspect(), // FIXME: Crashes for unknown reason
     visualizer(),
   ],
   css: {
