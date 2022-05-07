@@ -8,7 +8,6 @@ import { defineConfig } from 'vite'
 import vitePluginImp from 'vite-plugin-imp'
 import { optimizeLodashImports } from '@optimize-lodash/rollup-plugin'
 import Inspect from 'vite-plugin-inspect'
-import { ViteAliases } from 'vite-aliases'
 
 // Various paths
 const DIRNAME = dirname(fileURLToPath(import.meta.url))
@@ -30,7 +29,6 @@ export default defineConfig({
   plugins: [
     react(),
     optimizeLodashImports(),
-    // ViteAliases(), // FIXME: Crashes for unknown reason (alternatively we can set resolve.alias manually)
     vitePluginImp({
       libList: [
         {
@@ -44,7 +42,7 @@ export default defineConfig({
         },
       ],
     }),
-    // Inspect(), // FIXME: Crashes for unknown reason
+    Inspect(), // Note: Requires node >14.2.0 (plugin makes use of optional chaining)
     visualizer(),
   ],
   css: {
